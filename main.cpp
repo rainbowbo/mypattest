@@ -1,18 +1,29 @@
-#include "iostream"
-#include "fstream"
+#include<iostream>
 using namespace std;
-typedef struct Node{
-    int data;
-    struct Node *next;
-}List;
-List L,*PtrL;
-
-int main(){
-    int n,k;
-    ifstream cin("/home/song/ClionProjects/mysuanfa/a.txt");
-    cin>>PtrL>>n>>k;
-    for (int i = 0; i <n ; ++i) {
-
+int main()
+{
+    int c,e;
+    bool cas=true;
+    bool test=true;
+    while(cin>>c>>e)
+    {
+        if(e==0&&cas)
+        {
+            c=0;
+            cout<<c<<" "<<e;
+            cas=false;
+            break;
+        }
+        cas=false;
+        if(e==0&&!cas)
+        {
+            break;
+        }
+        if(test){
+        cout<<c*e<<" "<<e-1;
+        test=false;
+        }   
+        else   
+        cout<<" "<<c*e<<" "<<e-1;
     }
-
 }
